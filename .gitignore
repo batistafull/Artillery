@@ -1,0 +1,98 @@
+# =============================================================
+#  Unity (URP) .gitignore
+# =============================================================
+
+# --- Carpetas generadas por Unity ---
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Carpeta de assets del Asset Store descargados localmente
+/[Aa]ssets/AssetStoreTools*
+
+# Datos de Addressables generados en build
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Gradle / Android
+.gradle/
+ExportedObj/
+.consulo/
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics
+crashlytics-build.properties
+
+# Packages autogenerados de Unity
+/[Aa]ssets/[Pp]lugins/Editor/JetBrains*
+
+# --- URP / SRP ---
+# Las cachés de shaders (ShaderCache, VFXCache) viven en Library/ y ya se ignoran.
+# Los assets de URP en Assets/Settings (Pipeline Asset, Renderer, Volume Profiles) SÍ se versionan.
+
+# --- IDEs / Editores ---
+# Visual Studio
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Metadatos de símbolos de debug
+*.pdb.meta
+*.mdb.meta
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# --- Sistema operativo ---
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# --- Varios ---
+# Archivos de bloqueo/backup
+*.swp
+*.bak
+*~
+sysinfo.txt
+
+# Builds de WebGL / IL2CPP
+*_BurstDebugInformation_DoNotShip/
+*_BackUpThisFolder_ButDontShipItWithYourGame/
