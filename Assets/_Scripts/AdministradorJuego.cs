@@ -3,19 +3,43 @@ using UnityEngine;
 public class AdministradorJuego : MonoBehaviour
 {
     public static AdministradorJuego SingletonAdministradorJuego;
-    public static int velocidadBala = 30;
-    public static int DisparosPorJuego = 10;
-    public static float VelocidadRotacion = 1;
+
+    private static int _velocidadBala;
+    private static int _disparoPorJuego;
+    private static float _velocidadRotacion;
 
     private void Awake()
     {
         if(SingletonAdministradorJuego == null)
         {
             SingletonAdministradorJuego = this;
+            _velocidadBala = 30;
+            _disparoPorJuego = 10;
+            _velocidadRotacion = 1;
         }
         else
         {
             Debug.LogError("Ya existe una instancia de esta clase");
         }
     }
+
+    public static int velocidadBala
+    {
+        get => _velocidadBala;
+        set => _velocidadBala = value;
+    }
+
+    public static int DisparosPorJuego
+    {
+        get => _disparoPorJuego;
+        set => _disparoPorJuego = value;
+    }
+
+    public static float VelocidadRotacion
+    {
+        get => _velocidadRotacion;
+        set => _velocidadRotacion = value;
+    }
+
+    
 }

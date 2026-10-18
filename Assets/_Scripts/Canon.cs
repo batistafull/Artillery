@@ -7,6 +7,8 @@ public class Canon : MonoBehaviour
     private GameObject puntaCanon;
     private float rotacion;
 
+    private int bolaDisparadas = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,11 +36,14 @@ public class Canon : MonoBehaviour
 
         if (teclado.spaceKey.wasPressedThisFrame)
         {
-            GameObject temp = Instantiate(BalaPrefab, puntaCanon.transform.position, transform.rotation);
-            Rigidbody tempRB = temp.GetComponent<Rigidbody>();
-            Vector3 direccionDisparo = transform.rotation.eulerAngles;
-            direccionDisparo.y = 90 - direccionDisparo.x;
-            tempRB.linearVelocity = direccionDisparo.normalized * AdministradorJuego.velocidadBala;
+            if(bolaDisparadas < AdministradorJuego.DisparosPorJuego){
+                GameObject temp = Instantiate(BalaPrefab, puntaCanon.transform.position, transform.rotation);
+                Rigidbody tempRB = temp.GetComponent<Rigidbody>();
+                Vector3 direccionDisparo = transform.rotation.eulerAngles;
+                direccionDisparo.y = 90 - direccionDisparo.x;
+                tempRB.linearVelocity = direccionDisparo.normalized * AdministradorJuego.velocidadBala;
+                bolaDisparadas++;
+            }
         }
 
 
